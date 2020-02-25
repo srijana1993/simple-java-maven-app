@@ -3,6 +3,33 @@ pipeline {
         label 'maven'
 
     }
+    tools {
+        jdk 'openjdk8'
+        maven 'maven363'
+    }
+    stages{
+        stages('Build'){
+            steps {
+                sh "mvn clean test"
+
+            }
+        }
+        
+    }
+    post {
+        success {
+            echo "Good job"
+
+    
+        }
+        failure {
+            echo "Improve the skills"
+
+        }
+        always{
+            echo "Work hard"
+        }
+    }
     
 }
 
