@@ -7,25 +7,25 @@ pipeline {
         maven 'maven363'
     }
     stages {
-        stage('Build') {
+        stage('Test') {
             steps {
-                sh "mvn clean compile"
+                sh "mvn clean test"
             }
         }
+        stage('Packaging') {
+            steps {
+                sh "mvn package -DskipTests=true"
+
+            }
+            post {
+                success {
+                    echo "Inside Packaging stage-Success"
+                }
+                always {
+                    echo "Inside packaging stage-Always
+                }
+
+            }
+
+        } 
     }
-    post {
-        success {
-            echo "Good job"
-
-
-        }
-        failure {
-            ech0 "Improve the skills"
-
-        }
-        always {
-            echo "work hard"
-        }
-    }
-
-} 
