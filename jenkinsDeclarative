@@ -29,3 +29,15 @@ pipeline {
 
         } 
     }
+    post {
+        success {
+            echo "Good Job"
+        }
+        failure {
+            echo "Improve the skills"
+        }
+        always {
+            echo "Work hard"
+        }
+    }
+}
