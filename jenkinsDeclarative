@@ -19,10 +19,10 @@ pipeline {
             }
             post {
                 success {
-                    echo "Inside Packaging stage-Success"
+                    echo "Inside Packaging stage -Success"
                 }
                 always {
-                    echo "Inside packaging stage-Always
+                    echo "Inside packaging stage -Always"
                 }
 
             }
